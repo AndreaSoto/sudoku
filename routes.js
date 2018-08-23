@@ -5,8 +5,7 @@ let api = new Api;
 class Routes {
 
     getBoard(req, res, next) {
-        api.getBoard();
-        res.send('here!');
+        res.send(api.getBoard());
     }
 
 }
