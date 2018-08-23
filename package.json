@@ -1,0 +1,22 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaSoto/sudoku.git"
+  },
+  "author": "asoto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaSoto/sudoku/issues"
+  },
+  "homepage": "https://github.com/AndreaSoto/sudoku#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
