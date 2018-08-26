@@ -10,10 +10,5 @@ app.get('/sudoku/board', rt.getBoard);
 console.log('App: Ready! \nPort: 8080');
 app.listen(8080);
 
-let sudoku  = new Sudoku;
-sudoku.createBoard();
 
 
-module.exports = {
-	makepuzzle  : function () { return makepuzzle(solvepuzzle(makeArray(81, null))); }
-};
