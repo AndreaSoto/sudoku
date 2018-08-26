@@ -7,8 +7,8 @@ let rt = new Routes;
 
 app.get('/sudoku/board', rt.getBoard);
 
-console.log('App: Ready! \nPort: 8084');
-app.listen(8084);
+console.log('App: Ready! \nPort: 8080');
+app.listen(8080);
 
 let sudoku  = new Sudoku;
 sudoku.createBoard();
