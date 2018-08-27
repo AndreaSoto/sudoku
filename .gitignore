@@ -2,3 +2,5 @@ node_modules/
 package-lock.json
 lib/wrong_sudoku.js
 lib/wrong_api.js
+client/node_modules
+.vscode/
