@@ -5,11 +5,12 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
+    this.shouldCancel = false;
     this.state = {
       data: null,
       response: [], 
-      loading: true
+      loading: true,
+      err : null
     };
   }
 
@@ -20,7 +21,11 @@ class App extends Component {
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.board, loading: false }  ))
-      .catch(err => console.log(err));
+      .catch(err => !this.shouldCancel ? this.setState({ err }) : null);
+  }
+  
+  componentWillUnmount(){
+    this.shouldCancel = true;
   }
 
   callApi = async () => {
@@ -28,7 +33,6 @@ class App extends Component {
     const response = await fetch('/sudoku/board');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-
     return body;
   };
   reloadBoard(event) {
