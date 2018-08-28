@@ -17,9 +17,9 @@ $ npm build
 
 ## test
 ```console
-npm run test
+$ npm run test
 ```
 ## dev
 ```console
-npm run dev
+$ npm run dev
 ```
