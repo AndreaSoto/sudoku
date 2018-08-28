@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       data: null,
-      response: []
+      response: [], 
+      loading: true
     };
   }
 
@@ -19,18 +20,23 @@ class App extends Component {
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({ response: res.board }  ))
+      .then(res => this.setState({ response: res.board, loading: false }  ))
       .catch(err => console.log(err));
   }
 
   callApi = async () => {
+    this.setState({ loading: true });
     const response = await fetch('/sudoku/board');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
 
     return body;
   };
-
+  reloadBoard(event) {
+    this.callApi()
+    .then(res => this.setState({ response: res.board, loading: false }  ))
+    .catch(err => console.log(err));
+  }
   render() {
     return (
       <div className="App">
@@ -38,13 +44,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Sudoku Test 1</h1>
         </header>
-          <div className="container col-md-offset-3"><div className="row">
-              {this.state.response.map(function(val, index){
-                 return <div className="col-sm-1 float-left mx border border-dark display-4" key={index} id={index}>{val}</div>
-              })}
-          </div></div>
+          <div className="container col-md-offset-3">
+            <div className="row">
+              <button onClick={ this.reloadBoard.bind(this) } className="btn-primary">Reload</button>
+              
+            </div>
+
+              <div className="row">
+                  {this.state.response.map(function(val, index){
+                    return <div className={ `col-sm-1 float-left mx border border-light display-4 i${index}`} key={index} id={index}>{val}</div>
+                  })}
+              </div>
+            
+          </div>
       </div>
     );
+  
   }
 }
 
