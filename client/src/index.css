@@ -6,7 +6,15 @@ body {
 
 .mx{
   margin: 0px;
-  padding: 25px;
+  padding: 15px;
   flex: 0 0 10.333333%;
   max-width: 16.333333%;
+}
+.i18, .i19, .i20, .i21, .i22, .i23, .i24, .i25, .i26,
+.i45, .i46, .i47, .i48, .i49, .i50, .i51, .i52, .i53{
+  border-bottom: 1px solid #222222!important;
+}
+.i2, .i5, .i11, .i14, .i20, .i23, .i29, .i32, .i38,
+.i41, .i47, .i50, .i56, .i59, .i65, .i68, .i74, .i77{
+  border-right: 1px solid #222222!important;
 }
