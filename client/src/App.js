@@ -43,13 +43,14 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Sudoku Test 1</h1>
         </header>
+        <div className="col-sm-1">
+              <button onClick={ this.reloadBoard.bind(this) } className="btn-primary form-control">Reload</button>
+        </div>
           <div className="container col-md-offset-3">
-            <div className="row">
-              <button onClick={ this.reloadBoard.bind(this) } className="btn-primary">Reload</button>
-            </div>
+            
             {this.state.loading? 
               <div className="row">
-                <div className="mx" id="html-spinner"></div>
+                <div className="right" id="html-spinner"></div>
               </div>
               :
               <div className="row">
