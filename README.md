@@ -12,7 +12,7 @@ sudoku
 ## Install
 
 ```console
-$ npm build
+$ npm run build
 ```
 
 ## test
